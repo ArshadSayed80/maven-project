@@ -14,7 +14,7 @@ pipeline {
                 sh 'mvn clean package'
                 sh 'pwd'
                 sh 'echo "current working Directory"'
-                sh "docker build -f Dockerfile -t tomcatwebapp:${env.BUILD_ID}"
+                sh "docker build -f /var/lib/jenkins/workspace/ars-tomcat-web-app/Dockerfile -t tomcatwebapp:${env.BUILD_ID}"
                 //bat "echo ${my_tag}"
             }
 
