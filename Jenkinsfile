@@ -12,6 +12,8 @@ pipeline {
         stage('Build'){
             steps{
                 sh 'mvn clean package'
+                sh 'pwd'
+                sh 'echo "current working Directory"'
                 sh "docker build -f Dockerfile -t tomcatwebapp:${env.BUILD_ID}"
                 //bat "echo ${my_tag}"
             }
